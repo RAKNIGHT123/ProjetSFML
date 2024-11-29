@@ -203,6 +203,17 @@ int main() {
                 }
             }
         }
+        for (auto& redCircle1 : redCircles1) {
+             {
+                if (checkCircleCollision(redCircle1, shape)) {
+                    redCircle1.setPosition(-100, -100);
+                    shape.setPosition(-100, -100);
+                }
+            }
+        }
+
+
+
 
         window.clear();
         window.draw(shape5);
