@@ -137,7 +137,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ENEMY.cpp" />
+    <ClCompile Include="PLAYER.cpp" />
     <ClCompile Include="rayenchebbi.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ENEMY.h" />
+    <ClInclude Include="PLAYER.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
