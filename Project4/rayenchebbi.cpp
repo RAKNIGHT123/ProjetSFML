@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
-#include "Enemy.h"
+#include "ENEMY.h"
 #include <vector>
+#include "PLAYER.h"
+#include "OBJECT.h"
 
 using namespace sf;
 
@@ -13,13 +15,15 @@ int main() {
     EnemyShape3 enemy3(600.f, 200.f);
     EnemyShape4 enemy4(700.f, 300.f);
 
-   
-    std::vector<Enemy*> enemies;
-    enemies.push_back(&enemy2);  // Ajouter enemy2
-    enemies.push_back(&enemy3);  // Ajouter enemy3
-    enemies.push_back(&enemy4);  // Ajouter enemy4
+    Player player(400.f, 500.f);
 
-   
+    Object Object(700.f, 500.f);
+
+    std::vector<Enemy*> enemies;
+    enemies.push_back(&enemy2);  
+    enemies.push_back(&enemy3); 
+    enemies.push_back(&enemy4);  
+    
     sf::Clock clock;
 
     
@@ -33,20 +37,47 @@ int main() {
        
         float deltaTime = clock.restart().asSeconds();
 
+        player.update(deltaTime);
        
         for (auto& enemy : enemies) {
             enemy->update(deltaTime);  
         }
+        if (clock.getElapsedTime().asSeconds() >= 2.0f) {
+            player.s = 0;
+        }
 
+        if (player.getShape().getGlobalBounds().intersects(Object.getShape().getGlobalBounds())) {
+            Object.setVisibility(false);
+            player.s = 1;
+            clock.restart();
+        }
+        if (player.getShape().getGlobalBounds().intersects(enemy2.getShape().getGlobalBounds())) {
+            if (player.s == 1) {
+                enemy2.getShape().setPosition(-100.f, -100.f);
+            }
+        }
+        if (player.getShape().getGlobalBounds().intersects(enemy3.getShape().getGlobalBounds())) {
+            if (player.s == 1) {
+                enemy3.getShape().setPosition(-100.f, -100.f);
+            }
+        }
+        if (player.getShape().getGlobalBounds().intersects(enemy4.getShape().getGlobalBounds())) {
+            if (player.s == 1) {
+                enemy4.getShape().setPosition(-100.f, -100.f);
+            }
+        }
         
         window.clear();
+      
+        player.draw(window);
 
-        
+        Object.draw(window);
+
         for (auto& enemy : enemies) {
             enemy->draw(window);  
         }
 
-        
+
         for (auto& rect : enemy4.redRectangles) {
             window.draw(rect);  
         }

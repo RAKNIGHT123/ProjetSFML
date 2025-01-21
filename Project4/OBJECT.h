@@ -1,15 +1,17 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef OBJECT_H
+#define OBJECT_H
 
 #include <SFML/Graphics.hpp>
 
-class Player {
+class Object {
 public:
+    bool isVisible;
+    Object(float x, float y);
 
-    Player(float x, float y);
-    int s = 0;
+    void setVisibility(bool visible);
 
-    virtual void update(float deltaTime);
+    bool getVisibility() const;
+
     virtual void draw(sf::RenderWindow& window);
 
     sf::RectangleShape& getShape();
@@ -17,6 +19,4 @@ public:
 protected:
     sf::RectangleShape shape;
 };
-
-
 #endif

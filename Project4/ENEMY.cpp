@@ -61,6 +61,7 @@ void EnemyShape3::update(float deltaTime) {
     if (moveClock.getElapsedTime().asSeconds() >= 7.0f) {
         moveClock.restart();
     }
+    
 }
 EnemyShape4::EnemyShape4(float x, float y) : Enemy(x, y) {
     shape.setFillColor(sf::Color::Red);

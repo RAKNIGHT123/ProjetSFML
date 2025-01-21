@@ -8,6 +8,10 @@ public:
    
     Enemy(float x, float y);
 
+    void setVisibility(bool visible);
+
+    bool getVisibility() const;
+
     virtual void update(float deltaTime); 
     virtual void draw(sf::RenderWindow& window);
 
@@ -23,6 +27,10 @@ public:
     
     EnemyShape2(float x, float y);
 
+    void setVisibility(bool visible);
+
+    bool getVisibility() const;
+
     
     void update(float deltaTime) override;
 
@@ -34,6 +42,7 @@ class EnemyShape3 : public Enemy {
 public:
 
     EnemyShape3(float x, float y);
+
 
 
     void update(float deltaTime) override;
@@ -49,7 +58,7 @@ public:
 
     void update(float deltaTime) override;
 
-    void spawnRedRectangles(float deltaTime);
+    //void spawnRedRectangles(float deltaTime);
     std::vector<sf::RectangleShape> redRectangles;
     std::vector<sf::RectangleShape> redRectangles1;
     std::vector<sf::RectangleShape> redRectangles2;

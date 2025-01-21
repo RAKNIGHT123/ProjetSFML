@@ -137,12 +137,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Clef.cpp" />
     <ClCompile Include="ENEMY.cpp" />
+    <ClCompile Include="OBJECT.cpp" />
     <ClCompile Include="PLAYER.cpp" />
     <ClCompile Include="rayenchebbi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ENEMY.h" />
+    <ClInclude Include="OBJECT.h" />
     <ClInclude Include="PLAYER.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
