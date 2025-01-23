@@ -16,6 +16,7 @@ public:
     virtual void draw(sf::RenderWindow& window);
 
     sf::RectangleShape& getShape();  
+    sf::Texture texture;
 
 protected:
     sf::RectangleShape shape; 

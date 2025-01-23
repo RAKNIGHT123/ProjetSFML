@@ -3,7 +3,8 @@
 
 Object::Object(float x, float y) {
     isVisible = true;
-    shape.setSize(sf::Vector2f(50.f, 50.f));
+    shape.setSize(sf::Vector2f(100.f, 100.f));
+    
     shape.setPosition(x, y);
 };
 
@@ -20,6 +21,8 @@ bool Object::getVisibility() const {
   
 void Object::draw(sf::RenderWindow& window) {
     if (isVisible) {
+        texture.loadFromFile("textures/potion.png");
+        shape.setTexture(&texture);
         window.draw(shape);
     }
 };

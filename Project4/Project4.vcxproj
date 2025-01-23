@@ -139,14 +139,18 @@
   <ItemGroup>
     <ClCompile Include="Clef.cpp" />
     <ClCompile Include="ENEMY.cpp" />
+    <ClCompile Include="KEY.cpp" />
     <ClCompile Include="OBJECT.cpp" />
     <ClCompile Include="PLAYER.cpp" />
     <ClCompile Include="rayenchebbi.cpp" />
+    <ClCompile Include="WALL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ENEMY.h" />
+    <ClInclude Include="Key.h" />
     <ClInclude Include="OBJECT.h" />
     <ClInclude Include="PLAYER.h" />
+    <ClInclude Include="WALL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

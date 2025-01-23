@@ -1,12 +1,12 @@
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef KEY_H
+#define KEY_H
 
 #include <SFML/Graphics.hpp>
 
-class Object {
+class Key {
 public:
     bool isVisible;
-    Object(float x, float y);
+    Key(float x, float y);
     sf::Texture texture;
     void setVisibility(bool visible);
 

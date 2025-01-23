@@ -3,6 +3,9 @@
 #include <vector>
 #include "PLAYER.h"
 #include "OBJECT.h"
+#include "KEY.h"
+#include "WALL.h"
+#include <iostream>
 
 using namespace sf;
 
@@ -15,10 +18,15 @@ int main() {
     EnemyShape3 enemy3(600.f, 200.f);
     EnemyShape4 enemy4(700.f, 300.f);
 
+    Wall wall (600.f, 300.f);
+
+
     Player player(400.f, 500.f);
+    std::vector<Wall*> walls;
+    walls.push_back(&wall);
 
     Object Object(700.f, 500.f);
-
+    Key Key(900.f, 900.f);
     std::vector<Enemy*> enemies;
     enemies.push_back(&enemy2);  
     enemies.push_back(&enemy3); 
@@ -46,12 +54,18 @@ int main() {
             player.s = 0;
         }
 
+        if (player.getShape().getGlobalBounds().intersects(Key.getShape().getGlobalBounds())) {
+            Key.setVisibility(false);
+          
+        }
+
         if (player.getShape().getGlobalBounds().intersects(Object.getShape().getGlobalBounds())) {
             Object.setVisibility(false);
             player.s = 1;
             clock.restart();
         }
         if (player.getShape().getGlobalBounds().intersects(enemy2.getShape().getGlobalBounds())) {
+
             if (player.s == 1) {
                 enemy2.getShape().setPosition(-100.f, -100.f);
             }
@@ -66,17 +80,25 @@ int main() {
                 enemy4.getShape().setPosition(-100.f, -100.f);
             }
         }
+        for (auto& Wall :walls) {
+            if (player.getShape().getGlobalBounds().intersects(wall.getShape().getGlobalBounds())) {
+            
+                
+                player.not_move(deltaTime);
+   
+            }
+        }
         
         window.clear();
       
         player.draw(window);
-
+        wall.draw(window);
         Object.draw(window);
+        Key.draw(window);
 
         for (auto& enemy : enemies) {
             enemy->draw(window);  
         }
-
 
         for (auto& rect : enemy4.redRectangles) {
             window.draw(rect);  
@@ -91,7 +113,6 @@ int main() {
             window.draw(rect);  
         }
 
-        
         window.display();
     }
 

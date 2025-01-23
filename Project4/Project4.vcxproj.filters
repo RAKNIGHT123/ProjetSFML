@@ -30,6 +30,12 @@
     <ClCompile Include="Clef.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="WALL.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="KEY.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ENEMY.h">
@@ -39,6 +45,12 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="OBJECT.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="WALL.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>

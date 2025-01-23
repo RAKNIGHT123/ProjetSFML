@@ -33,9 +33,65 @@ void Player::update(float deltaTime) {
     }
 
 }
+void Player::not_move(float deltaTime) {
+    
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+        if (m = 1) {
+            shape.move(-0.06f, 0);
+            m = 0;
 
+        }
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+        if (m = 0) {
+            shape.move(-0.06f, 0);
+            m = 1;
+
+        }
+    }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+                if (m = 1) {
+                    shape.move(0.06f, 0);
+                    m = 0;
+                }
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+                if (m = 0) {
+                    shape.move(0.06f, 0);
+                    m = 1;
+                }
+            }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            if (n = 1) {
+                shape.move(0, 0.06f);
+                n = 0;
+                
+            }
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            if (n = 0) {
+                shape.move(0, 0.06f);
+                n = 1;
+            }
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            if (n = 1) {
+                shape.move(0, -0.06f);
+                n = 0;
+                
+            }
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            if (n = 0) {
+                shape.move(0, -0.06f);
+                n = 1;
+            }
+        }
+}
 
 void Player::draw(sf::RenderWindow& window) {
+
     window.draw(shape);
 }
 

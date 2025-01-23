@@ -1,17 +1,12 @@
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef WALL_H
+#define WALL_H
 
 #include <SFML/Graphics.hpp>
 
-class Object {
-public:
-    bool isVisible;
-    Object(float x, float y);
+class Wall {
+public:    
+    Wall(float x, float y);
     sf::Texture texture;
-    void setVisibility(bool visible);
-
-    bool getVisibility() const;
-
     virtual void draw(sf::RenderWindow& window);
 
     sf::RectangleShape& getShape();

@@ -1,16 +1,13 @@
 #include "Enemy.h"
 
-
 Enemy::Enemy(float x, float y) {
-    shape.setSize(sf::Vector2f(50.f, 50.f));  
-    shape.setFillColor(sf::Color::Magenta);    
+    shape.setSize(sf::Vector2f(50.f, 50.f)); 
     shape.setPosition(x, y);                  
 }
 
 void Enemy::update(float deltaTime) {
    
 }
-
 
 void Enemy::draw(sf::RenderWindow& window) {
     window.draw(shape);  
@@ -20,12 +17,9 @@ sf::RectangleShape& Enemy::getShape() {
     return shape;
 }
 
-
-
 EnemyShape2::EnemyShape2(float x, float y) : Enemy(x, y) {
-    shape.setFillColor(sf::Color::Magenta); 
+    
 }
-
 
 void EnemyShape2::update(float deltaTime) {
     
@@ -41,9 +35,11 @@ void EnemyShape2::update(float deltaTime) {
     if (moveClock.getElapsedTime().asSeconds() >= 7.0f) {
         moveClock.restart();  
     }
+    texture.loadFromFile("textures/1.png");
+    shape.setTexture(&texture);
 }
 EnemyShape3::EnemyShape3(float x, float y) : Enemy(x, y) {
-    shape.setFillColor(sf::Color::Magenta);
+   
 }
 
 
@@ -61,13 +57,17 @@ void EnemyShape3::update(float deltaTime) {
     if (moveClock.getElapsedTime().asSeconds() >= 7.0f) {
         moveClock.restart();
     }
-    
+    texture.loadFromFile("textures/1.png");
+    shape.setTexture(&texture);
 }
 EnemyShape4::EnemyShape4(float x, float y) : Enemy(x, y) {
-    shape.setFillColor(sf::Color::Red);
+    
 }
 void EnemyShape4::update(float deltaTime) {
-    if (spawnClock.getElapsedTime().asSeconds() >= 2.0f) {
+    shape.setSize(sf::Vector2f(100.f, 100.f));
+    texture.loadFromFile("textures/2.png");
+    shape.setTexture(&texture);
+    if (spawnClock.getElapsedTime().asSeconds() >= 4.0f) {
         spawnClock.restart();
         //right
         sf::RectangleShape newRedRect(sf::Vector2f(30.f, 30.f));
@@ -89,6 +89,7 @@ void EnemyShape4::update(float deltaTime) {
         newRedRect3.setFillColor(sf::Color::Red);
         newRedRect3.setPosition(shape.getPosition().x, shape.getPosition().y);
         redRectangles3.push_back(newRedRect3);
+       
     }
     //right
     for (auto& rect : redRectangles) {
