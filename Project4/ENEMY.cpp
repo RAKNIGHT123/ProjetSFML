@@ -1,7 +1,8 @@
 #include "Enemy.h"
 
+
 Enemy::Enemy(float x, float y) {
-    shape.setSize(sf::Vector2f(50.f, 50.f)); 
+    shape.setSize(sf::Vector2f(70.f, 80.f)); 
     shape.setPosition(x, y);                  
 }
 
@@ -24,15 +25,15 @@ EnemyShape2::EnemyShape2(float x, float y) : Enemy(x, y) {
 void EnemyShape2::update(float deltaTime) {
     
     if (moveClock.getElapsedTime().asSeconds() >= 1.0f) {
-        shape.move(0.02f, 0);  
-    }
-    if (moveClock.getElapsedTime().asSeconds() >= 3.0f) {
-        shape.move(-0.02f, 0);  
+        shape.move(0.7f, 0);  
     }
     if (moveClock.getElapsedTime().asSeconds() >= 5.0f) {
-        shape.move(-0.02f, 0); 
+        shape.move(-0.7f, 0);  
     }
-    if (moveClock.getElapsedTime().asSeconds() >= 7.0f) {
+    if (moveClock.getElapsedTime().asSeconds() >= 6.0f) {
+        shape.move(-0.7f, 0); 
+    }
+    if (moveClock.getElapsedTime().asSeconds() >= 10.0f) {
         moveClock.restart();  
     }
     texture.loadFromFile("textures/1.png");
@@ -46,15 +47,15 @@ EnemyShape3::EnemyShape3(float x, float y) : Enemy(x, y) {
 void EnemyShape3::update(float deltaTime) {
 
     if (moveClock.getElapsedTime().asSeconds() >= 1.0f) {
-        shape.move(0, 0.02f);
-    }
-    if (moveClock.getElapsedTime().asSeconds() >= 3.0f) {
-        shape.move(0, -0.02f);
+        shape.move(0, 1.0f);
     }
     if (moveClock.getElapsedTime().asSeconds() >= 5.0f) {
-        shape.move(0, -0.02f);
+        shape.move(0, -1.0f);
     }
-    if (moveClock.getElapsedTime().asSeconds() >= 7.0f) {
+    if (moveClock.getElapsedTime().asSeconds() >= 6.0f) {
+        shape.move(0, -1.0f);
+    }
+    if (moveClock.getElapsedTime().asSeconds() >= 10.0f) {
         moveClock.restart();
     }
     texture.loadFromFile("textures/1.png");
@@ -64,7 +65,7 @@ EnemyShape4::EnemyShape4(float x, float y) : Enemy(x, y) {
     
 }
 void EnemyShape4::update(float deltaTime) {
-    shape.setSize(sf::Vector2f(100.f, 100.f));
+    shape.setSize(sf::Vector2f(150.f, 150.f));
     texture.loadFromFile("textures/2.png");
     shape.setTexture(&texture);
     if (spawnClock.getElapsedTime().asSeconds() >= 4.0f) {
@@ -93,18 +94,18 @@ void EnemyShape4::update(float deltaTime) {
     }
     //right
     for (auto& rect : redRectangles) {
-        rect.move(0.02f, 0);
+        rect.move(0.7f, 0);
     }
     //UP
     for (auto& rect : redRectangles1) {
-        rect.move(0, 0.02f);
+        rect.move(0, 0.7f);
     }
     //Down
     for (auto& rect : redRectangles2) {
-        rect.move(0, -0.02f);
+        rect.move(0, -0.7f);
     }
     //left
     for (auto& rect : redRectangles3) {
-        rect.move(-0.02f, 0);
+        rect.move(-0.7f, 0);
     }
 }

@@ -36,6 +36,9 @@
     <ClCompile Include="KEY.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="DOOR.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ENEMY.h">
@@ -51,6 +54,9 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="Key.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="DOOR.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>

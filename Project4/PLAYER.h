@@ -11,7 +11,7 @@ public:
     int s = 0;
     int m = 1;
     int n = 1;
-
+    sf::Texture texture;
     virtual void update(float deltaTime);
     virtual void not_move(float deltaTime);
     virtual void draw(sf::RenderWindow& window);

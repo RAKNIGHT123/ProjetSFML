@@ -3,7 +3,7 @@
 
 Key::Key(float x, float y) {
     isVisible = true;
-    shape.setSize(sf::Vector2f(100.f, 80.f));
+    shape.setSize(sf::Vector2f(100.f, 70.f));
     
     shape.setPosition(x, y);
 

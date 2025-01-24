@@ -3,7 +3,7 @@
 
 Wall::Wall(float x, float y) {
    
-    shape.setSize(sf::Vector2f(100.f, 100.f));
+    shape.setSize(sf::Vector2f(50.f, 50.f));
     shape.setPosition(x, y);
 };
 

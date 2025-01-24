@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Clef.cpp" />
+    <ClCompile Include="DOOR.cpp" />
     <ClCompile Include="ENEMY.cpp" />
     <ClCompile Include="KEY.cpp" />
     <ClCompile Include="OBJECT.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="WALL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DOOR.h" />
     <ClInclude Include="ENEMY.h" />
     <ClInclude Include="Key.h" />
     <ClInclude Include="OBJECT.h" />
