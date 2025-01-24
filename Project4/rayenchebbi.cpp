@@ -9,7 +9,7 @@
 #include <iostream>
 
 using namespace sf;
-
+int a = 0;
 int T[21][40] = {
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -105,7 +105,12 @@ int main() {
 
         if (player.getShape().getGlobalBounds().intersects(Key.getShape().getGlobalBounds())) {
             Key.setVisibility(false);
-          
+            a = 1;
+        }
+        if (player.getShape().getGlobalBounds().intersects(door.getShape().getGlobalBounds())) {
+            
+            if (a = 1)
+                player.getShape().setPosition(-100.f, -100.f);
         }
 
         if (player.getShape().getGlobalBounds().intersects(Object.getShape().getGlobalBounds())) {
@@ -118,16 +123,22 @@ int main() {
             if (player.s == 1) {
                 enemy2.getShape().setPosition(-100.f, -100.f);
             }
+            else;
+            player.getShape().setPosition(-100.f, -100.f);
         }
         if (player.getShape().getGlobalBounds().intersects(enemy3.getShape().getGlobalBounds())) {
             if (player.s == 1) {
                 enemy3.getShape().setPosition(-100.f, -100.f);
             }
+            else;
+            player.getShape().setPosition(-100.f, -100.f);
         }
         if (player.getShape().getGlobalBounds().intersects(enemy4.getShape().getGlobalBounds())) {
             if (player.s == 1) {
                 enemy4.getShape().setPosition(-100.f, -100.f);
             }
+            else;
+            player.getShape().setPosition(-100.f, -100.f);
         }
         for (auto& rect :walls) {
             if (player.getShape().getGlobalBounds().intersects(rect->getShape().getGlobalBounds())) {
